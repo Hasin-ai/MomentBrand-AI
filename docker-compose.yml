@@ -1,0 +1,60 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: momentbrand
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/migrate_postgres.sql:/docker-entrypoint-initdb.d/01-migrate.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d momentbrand"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      APP_ENV: ${APP_ENV:-production}
+      DEMO_FALLBACK_MODE: ${DEMO_FALLBACK_MODE:-false}
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/momentbrand
+      UPLOADS_DIR: /app/uploads
+      PUBLIC_BASE_URL: http://localhost:8000
+      CALENDARIFIC_API_KEY: ${CALENDARIFIC_API_KEY:-}
+      BRAIN_API_BASE_URL: ${BRAIN_API_BASE_URL:-}
+      BRAIN_API_TIMEOUT_SECONDS: ${BRAIN_API_TIMEOUT_SECONDS:-180}
+      GOOGLE_AI_API_KEY: ${GOOGLE_AI_API_KEY:-}
+      GOOGLE_SERVICE_ACCOUNT_PATH: ${GOOGLE_SERVICE_ACCOUNT_PATH:-}
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN:-}
+      CLOUDFLARE_ACCOUNT_ID: ${CLOUDFLARE_ACCOUNT_ID:-}
+      CLOUDFLARE_TEXT_MODEL_ID: ${CLOUDFLARE_TEXT_MODEL_ID:-@cf/moonshotai/kimi-k2.6}
+      CLOUDFLARE_IMAGE_MODEL_ID: ${CLOUDFLARE_IMAGE_MODEL_ID:-@cf/black-forest-labs/flux-2-klein-9b}
+      CLOUDFLARE_IMAGE_EDIT_MODEL_ID: ${CLOUDFLARE_IMAGE_EDIT_MODEL_ID:-@cf/black-forest-labs/flux-2-klein-9b}
+      CLOUDFLARE_MODEL_ID: ${CLOUDFLARE_MODEL_ID:-}
+      REMOVEBG_API_KEY: ${REMOVEBG_API_KEY:-}
+    ports:
+      - "8000:8000"
+    volumes:
+      - uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  uploads:

@@ -1,0 +1,804 @@
+{
+  "status": "success",
+  "campaign_name": "World Cup Campaign",
+  "input_type": "image",
+  "processed_as": "1_second_silent_video_1_fps_512px_max",
+  "analysis_mode": "computational_neuromarketing_research_informed_indices",
+  "model": "TRIBE v2",
+  "model_status": {
+    "loaded": true,
+    "source": "tribev2.TribeModel",
+    "device": "cuda",
+    "checkpoint": "facebook/tribev2",
+    "error": null
+  },
+  "prediction_shape": [
+    1,
+    20484
+  ],
+  "events_count": 2,
+  "warning": "Neuromarketing indices are research-informed proxy formulas over predicted brain-response features. They are not a validated emotion reader, not observed fMRI, and not a guaranteed KPI forecast. For production claims, validate these proxy indices against real campaign outcomes, A/B tests, or human studies.",
+  "required_wording": "Predicted neural-response proxies derived from TRIBE v2 outputs.",
+  "image_info": {
+    "original_width": 4500,
+    "original_height": 4500,
+    "original_pixels": 20250000,
+    "mode": "RGB",
+    "format": "JPEG",
+    "upload_size_mb": 2.317,
+    "resized_for_inference": true,
+    "inference_width": 512,
+    "inference_height": 512,
+    "max_image_side_used_for_inference": 512,
+    "hard_max_image_pixels": 50000000
+  },
+  "scoring_mode": "destrieux_surface_atlas",
+  "roi_metadata": {
+    "source": "tuple_output",
+    "tuple_length": 2,
+    "second_item_type": "list",
+    "second_item_len": 1,
+    "stat_map_size": 20484,
+    "atlas_roi_extraction": {
+      "method": "destrieux_surface_atlas",
+      "available": true,
+      "stat_map_size": 20484,
+      "atlas_meta": {
+        "atlas": "nilearn.datasets.fetch_atlas_surf_destrieux",
+        "available": true,
+        "cached": false
+      },
+      "atlas_left_vertices": 10242,
+      "atlas_right_vertices": 10242,
+      "shape_match": "left_plus_right",
+      "matched_regions": [
+        "anterior_cingulate",
+        "dorsal_attention_parietal",
+        "insula_salience",
+        "motor_arousal_proxy",
+        "orbitofrontal_vmPFC",
+        "posterior_cingulate_precuneus",
+        "prefrontal_control",
+        "temporal_semantic_social",
+        "ventral_visual_object_form",
+        "visual_cortex"
+      ],
+      "matched_labels_sample": {
+        "visual_cortex": [
+          "left:G_and_S_occipital_inf",
+          "left:G_cuneus",
+          "left:G_occipital_middle",
+          "left:G_occipital_sup",
+          "left:G_oc-temp_med-Lingual",
+          "left:G_precuneus",
+          "left:Pole_occipital",
+          "left:S_calcarine"
+        ],
+        "motor_arousal_proxy": [
+          "left:G_and_S_paracentral",
+          "left:G_precentral",
+          "left:S_precentral-inf-part",
+          "left:S_precentral-sup-part",
+          "right:G_and_S_paracentral",
+          "right:G_precentral",
+          "right:S_precentral-inf-part",
+          "right:S_precentral-sup-part"
+        ],
+        "anterior_cingulate": [
+          "left:G_and_S_cingul-Ant",
+          "right:G_and_S_cingul-Ant"
+        ],
+        "posterior_cingulate_precuneus": [
+          "left:G_cingul-Post-dorsal",
+          "left:G_cingul-Post-ventral",
+          "right:G_cingul-Post-dorsal",
+          "right:G_cingul-Post-ventral"
+        ],
+        "prefrontal_control": [
+          "left:G_front_inf-Opercular",
+          "left:G_front_inf-Orbital",
+          "left:G_front_inf-Triangul",
+          "left:G_front_middle",
+          "left:G_front_sup",
+          "left:S_front_inf",
+          "left:S_front_middle",
+          "left:S_front_sup"
+        ],
+        "insula_salience": [
+          "left:G_insular_short",
+          "left:S_circular_insula_ant",
+          "left:S_circular_insula_inf",
+          "left:S_circular_insula_sup",
+          "right:G_insular_short",
+          "right:S_circular_insula_ant",
+          "right:S_circular_insula_inf",
+          "right:S_circular_insula_sup"
+        ],
+        "ventral_visual_object_form": [
+          "left:G_oc-temp_lat-fusifor",
+          "left:G_oc-temp_med-Parahip",
+          "left:G_temporal_inf",
+          "left:S_oc-temp_lat",
+          "left:S_temporal_inf",
+          "right:G_oc-temp_lat-fusifor",
+          "right:G_oc-temp_med-Parahip",
+          "right:G_temporal_inf"
+        ],
+        "orbitofrontal_vmPFC": [
+          "left:G_orbital",
+          "left:G_rectus",
+          "left:G_subcallosal",
+          "left:S_orbital_lateral",
+          "left:S_orbital_med-olfact",
+          "left:S_orbital-H_Shaped",
+          "left:S_suborbital",
+          "right:G_orbital"
+        ],
+        "dorsal_attention_parietal": [
+          "left:G_pariet_inf-Angular",
+          "left:G_pariet_inf-Supramar",
+          "left:G_parietal_sup",
+          "left:G_postcentral",
+          "left:S_intrapariet_and_P_trans",
+          "left:S_postcentral",
+          "left:S_subparietal",
+          "right:G_pariet_inf-Angular"
+        ],
+        "temporal_semantic_social": [
+          "left:G_temporal_middle",
+          "left:Pole_temporal",
+          "left:S_temporal_sup",
+          "left:S_temporal_transverse",
+          "right:G_temporal_middle",
+          "right:Pole_temporal",
+          "right:S_temporal_sup",
+          "right:S_temporal_transverse"
+        ]
+      }
+    }
+  },
+  "brain_features": {
+    "visual_cortex": 1.0,
+    "ventral_visual_object_form": 0.19,
+    "dorsal_attention_parietal": 0.2306,
+    "prefrontal_control": 0.3106,
+    "orbitofrontal_vmPFC": 0.0,
+    "anterior_cingulate": 0.4296,
+    "posterior_cingulate_precuneus": 0.1304,
+    "insula_salience": 0.2197,
+    "temporal_semantic_social": 0.2597,
+    "parahippocampal_memory_proxy": 0.0,
+    "motor_arousal_proxy": 0.2013,
+    "amygdala": 0.0,
+    "hippocampus": 0.0,
+    "ventral_striatum_nucleus_accumbens": 0.0,
+    "surface_global_magnitude": 0.0,
+    "surface_high_activation_tail": 0.0,
+    "surface_activation_contrast": 0.0,
+    "surface_signal_complexity": 0.0,
+    "surface_positive_balance": 0.0,
+    "surface_activation_sparsity": 0.0,
+    "feature_mean": 0.14859500527381897,
+    "feature_std": 0.23472678661346436,
+    "feature_min": 0.0,
+    "feature_max": 1.0,
+    "feature_range": 1.0,
+    "feature_energy": 0.27780774235725403,
+    "feature_entropy": 0.6613926109937209,
+    "feature_nonzero_ratio": 0.45,
+    "mode_explicit_region_scores": 0.0,
+    "mode_destrieux_surface_atlas": 1.0,
+    "mode_unlabeled_surface_profile": 0.0
+  },
+  "brain_feature_summary": {
+    "top_active_features": [
+      {
+        "feature": "visual_cortex",
+        "value": 1.0
+      },
+      {
+        "feature": "anterior_cingulate",
+        "value": 0.4296
+      },
+      {
+        "feature": "prefrontal_control",
+        "value": 0.3106
+      },
+      {
+        "feature": "temporal_semantic_social",
+        "value": 0.2597
+      },
+      {
+        "feature": "dorsal_attention_parietal",
+        "value": 0.2306
+      },
+      {
+        "feature": "insula_salience",
+        "value": 0.2197
+      },
+      {
+        "feature": "motor_arousal_proxy",
+        "value": 0.2013
+      },
+      {
+        "feature": "ventral_visual_object_form",
+        "value": 0.19
+      }
+    ],
+    "global_intensity": 0.1486,
+    "activation_contrast": 1.0,
+    "activation_dispersion": 0.2347,
+    "feature_entropy": 0.6614,
+    "nonzero_feature_ratio": 0.45,
+    "basis": "Numeric features extracted from TRIBE-predicted brain response. No emotion labels, decoder, or training path is used."
+  },
+  "brain_region_scores": [
+    {
+      "region": "visual_cortex",
+      "activation": 1.0,
+      "confidence": "medium",
+      "interpretation": "visual salience / early visual engagement",
+      "available": true
+    },
+    {
+      "region": "ventral_visual_object_form",
+      "activation": 0.19,
+      "confidence": "medium",
+      "interpretation": "object/form and brand-visual processing proxy",
+      "available": true
+    },
+    {
+      "region": "dorsal_attention_parietal",
+      "activation": 0.2306,
+      "confidence": "medium",
+      "interpretation": "visuospatial attention proxy",
+      "available": true
+    },
+    {
+      "region": "prefrontal_control",
+      "activation": 0.3106,
+      "confidence": "medium",
+      "interpretation": "cognitive-control and executive-attention proxy",
+      "available": true
+    },
+    {
+      "region": "orbitofrontal_vmPFC",
+      "activation": 0.0,
+      "confidence": "medium",
+      "interpretation": "cortical valuation/reward proxy",
+      "available": true
+    },
+    {
+      "region": "anterior_cingulate",
+      "activation": 0.4296,
+      "confidence": "medium",
+      "interpretation": "salience, conflict, arousal/action-preparation proxy",
+      "available": true
+    },
+    {
+      "region": "posterior_cingulate_precuneus",
+      "activation": 0.1304,
+      "confidence": "medium",
+      "interpretation": "context/self-relevance/memory-network proxy",
+      "available": true
+    },
+    {
+      "region": "insula_salience",
+      "activation": 0.2197,
+      "confidence": "medium",
+      "interpretation": "interoceptive/affective salience proxy",
+      "available": true
+    },
+    {
+      "region": "temporal_semantic_social",
+      "activation": 0.2597,
+      "confidence": "medium",
+      "interpretation": "semantic/social/association proxy",
+      "available": true
+    },
+    {
+      "region": "parahippocampal_memory_proxy",
+      "activation": null,
+      "confidence": "low",
+      "interpretation": "scene/context memory encoding proxy",
+      "available": false
+    },
+    {
+      "region": "motor_arousal_proxy",
+      "activation": 0.2013,
+      "confidence": "medium",
+      "interpretation": "action-preparation/arousal proxy",
+      "available": true
+    },
+    {
+      "region": "amygdala",
+      "activation": null,
+      "confidence": "low",
+      "interpretation": "subcortical affective-salience region",
+      "available": false
+    },
+    {
+      "region": "hippocampus",
+      "activation": null,
+      "confidence": "low",
+      "interpretation": "subcortical/medial-temporal memory region",
+      "available": false
+    },
+    {
+      "region": "ventral_striatum_nucleus_accumbens",
+      "activation": null,
+      "confidence": "low",
+      "interpretation": "subcortical reward/motivation region",
+      "available": false
+    }
+  ],
+  "neuromarketing_analysis": {
+    "analysis_mode": "computational_neuromarketing_research_informed_indices",
+    "evidence_level": "research_informed_formula_proxy_not_validated_kpi",
+    "overall_ad_engagement_index": 0.2531,
+    "likely_engagement_types": [
+      {
+        "engagement_type": "attention / stopping power",
+        "label": "attention_capture",
+        "score": 0.4221,
+        "strength": "moderate",
+        "confidence": "medium"
+      },
+      {
+        "engagement_type": "novelty / surprise proxy",
+        "label": "novelty_surprise",
+        "score": 0.3249,
+        "strength": "weak",
+        "confidence": "medium"
+      },
+      {
+        "engagement_type": "utilitarian / cognitive processing proxy",
+        "label": "cognitive_load_informativeness",
+        "score": 0.3032,
+        "strength": "weak",
+        "confidence": "medium"
+      },
+      {
+        "engagement_type": "hedonic / liking proxy",
+        "label": "hedonic_appeal",
+        "score": 0.2819,
+        "strength": "weak",
+        "confidence": "medium"
+      },
+      {
+        "engagement_type": "emotional salience / arousal proxy",
+        "label": "affective_salience",
+        "score": 0.2657,
+        "strength": "weak",
+        "confidence": "medium"
+      },
+      {
+        "engagement_type": "desire / purchase intent proxy",
+        "label": "desirability_reward",
+        "score": 0.2199,
+        "strength": "weak",
+        "confidence": "medium"
+      },
+      {
+        "engagement_type": "memory / brand recall proxy",
+        "label": "memory_encoding_potential",
+        "score": 0.1867,
+        "strength": "very_low",
+        "confidence": "low"
+      }
+    ],
+    "engagement_summary": {
+      "top_engagement_type": {
+        "engagement_type": "attention / stopping power",
+        "label": "attention_capture",
+        "score": 0.4221,
+        "strength": "moderate",
+        "confidence": "medium"
+      },
+      "strategic_read": "The ad may be processed more as information/attention than as desire or conversion pull.",
+      "scoring_mode": "destrieux_surface_atlas",
+      "processed_as": "1_second_silent_video_1_fps_512px_max"
+    },
+    "warning": "Neuromarketing indices are research-informed proxy formulas over predicted brain-response features. They are not a validated emotion reader, not observed fMRI, and not a guaranteed KPI forecast. For production claims, validate these proxy indices against real campaign outcomes, A/B tests, or human studies."
+  },
+  "neuromarketing_indices": [
+    {
+      "label": "attention_capture",
+      "score": 0.4221,
+      "confidence": "medium",
+      "engagement_type": "attention / stopping power",
+      "description": "How strongly the stimulus may capture visual and attentional processing.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "visual_cortex",
+          "value": 1.0,
+          "weight": 0.3
+        },
+        {
+          "feature": "dorsal_attention_parietal",
+          "value": 0.2306,
+          "weight": 0.25
+        },
+        {
+          "feature": "anterior_cingulate",
+          "value": 0.4296,
+          "weight": 0.15
+        },
+        {
+          "feature": "surface_high_activation_tail",
+          "value": 0.0,
+          "weight": 0.15
+        },
+        {
+          "feature": "surface_activation_contrast",
+          "value": 0.0,
+          "weight": 0.15
+        }
+      ],
+      "missing_features": [],
+      "missing_critical_features": [],
+      "research_basis": "Ad-processing research commonly treats attention/perception as core ad-effectiveness processes; this index uses visual and frontoparietal/cingulate proxies rather than original image features.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "novelty_surprise",
+      "score": 0.3249,
+      "confidence": "medium",
+      "engagement_type": "novelty / surprise proxy",
+      "description": "Potential novelty, high arousal, or unexpectedness signal.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "surface_high_activation_tail",
+          "value": 0.0,
+          "weight": 0.3
+        },
+        {
+          "feature": "anterior_cingulate",
+          "value": 0.4296,
+          "weight": 0.25
+        },
+        {
+          "feature": "dorsal_attention_parietal",
+          "value": 0.2306,
+          "weight": 0.15
+        },
+        {
+          "feature": "insula_salience",
+          "value": 0.2197,
+          "weight": 0.15
+        },
+        {
+          "feature": "feature_range",
+          "value": 1.0,
+          "weight": 0.15
+        }
+      ],
+      "missing_features": [],
+      "missing_critical_features": [],
+      "research_basis": "High-response tails, salience, cingulate and attention proxies can indicate stronger response contrast; this does not identify a specific emotion.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "cognitive_load_informativeness",
+      "score": 0.3032,
+      "confidence": "medium",
+      "engagement_type": "utilitarian / cognitive processing proxy",
+      "description": "How much the ad may drive deliberation, control, reasoning, or utilitarian information processing.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "prefrontal_control",
+          "value": 0.3106,
+          "weight": 0.35
+        },
+        {
+          "feature": "dorsal_attention_parietal",
+          "value": 0.2306,
+          "weight": 0.2
+        },
+        {
+          "feature": "anterior_cingulate",
+          "value": 0.4296,
+          "weight": 0.2
+        },
+        {
+          "feature": "temporal_semantic_social",
+          "value": 0.2597,
+          "weight": 0.15
+        },
+        {
+          "feature": "feature_std",
+          "value": 0.2347,
+          "weight": 0.1
+        }
+      ],
+      "missing_features": [],
+      "missing_critical_features": [],
+      "research_basis": "Ad research separates information processing/executive function from affective responses; this index represents more analytic or utilitarian engagement.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "hedonic_appeal",
+      "score": 0.2819,
+      "confidence": "medium",
+      "engagement_type": "hedonic / liking proxy",
+      "description": "Potential fun, pleasantness, aesthetic appeal, or hedonic pull.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "orbitofrontal_vmPFC",
+          "value": 0.0,
+          "weight": 0.3
+        },
+        {
+          "feature": "insula_salience",
+          "value": 0.2197,
+          "weight": 0.15
+        },
+        {
+          "feature": "visual_cortex",
+          "value": 1.0,
+          "weight": 0.15
+        },
+        {
+          "feature": "ventral_visual_object_form",
+          "value": 0.19,
+          "weight": 0.15
+        }
+      ],
+      "missing_features": [
+        "ventral_striatum_nucleus_accumbens"
+      ],
+      "missing_critical_features": [
+        "ventral_striatum_nucleus_accumbens"
+      ],
+      "research_basis": "Hedonic banner/ad work connects reward, self-relevance and emotion systems to hedonic appeal; this index remains a proxy unless validated against liking data.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "affective_salience",
+      "score": 0.2657,
+      "confidence": "medium",
+      "engagement_type": "emotional salience / arousal proxy",
+      "description": "Potential emotional salience or arousal intensity, without naming a discrete emotion.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "insula_salience",
+          "value": 0.2197,
+          "weight": 0.3
+        },
+        {
+          "feature": "anterior_cingulate",
+          "value": 0.4296,
+          "weight": 0.25
+        },
+        {
+          "feature": "temporal_semantic_social",
+          "value": 0.2597,
+          "weight": 0.1
+        },
+        {
+          "feature": "surface_signal_complexity",
+          "value": 0.0,
+          "weight": 0.1
+        }
+      ],
+      "missing_features": [
+        "amygdala"
+      ],
+      "missing_critical_features": [
+        "amygdala"
+      ],
+      "research_basis": "Affective response is a core advertising process. This index estimates salience/arousal-like response rather than claiming happiness/fear/etc.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "desirability_reward",
+      "score": 0.2199,
+      "confidence": "medium",
+      "engagement_type": "desire / purchase intent proxy",
+      "description": "Potential desire, valuation, wanting, or conversion pull.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "orbitofrontal_vmPFC",
+          "value": 0.0,
+          "weight": 0.3
+        },
+        {
+          "feature": "surface_positive_balance",
+          "value": 0.0,
+          "weight": 0.15
+        },
+        {
+          "feature": "anterior_cingulate",
+          "value": 0.4296,
+          "weight": 0.1
+        },
+        {
+          "feature": "feature_max",
+          "value": 1.0,
+          "weight": 0.1
+        }
+      ],
+      "missing_features": [
+        "ventral_striatum_nucleus_accumbens"
+      ],
+      "missing_critical_features": [
+        "ventral_striatum_nucleus_accumbens"
+      ],
+      "research_basis": "Consumer-neuroscience papers link ventral striatum/NAcc and vmPFC/OFC to value/desirability/purchase-related signals; TRIBE may not expose subcortical regions, so confidence drops when those are missing.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "memory_encoding_potential",
+      "score": 0.1867,
+      "confidence": "low",
+      "engagement_type": "memory / brand recall proxy",
+      "description": "Potential for brand/message encoding and later recall.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "posterior_cingulate_precuneus",
+          "value": 0.1304,
+          "weight": 0.2
+        },
+        {
+          "feature": "temporal_semantic_social",
+          "value": 0.2597,
+          "weight": 0.15
+        },
+        {
+          "feature": "ventral_visual_object_form",
+          "value": 0.19,
+          "weight": 0.1
+        }
+      ],
+      "missing_features": [
+        "parahippocampal_memory_proxy",
+        "hippocampus"
+      ],
+      "missing_critical_features": [
+        "parahippocampal_memory_proxy",
+        "hippocampus"
+      ],
+      "research_basis": "Memory is a central advertising outcome. This index uses medial-temporal, posterior midline, temporal-semantic and object/form proxies when available.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "self_relevance_persuasion",
+      "score": 0.1766,
+      "confidence": "medium",
+      "engagement_type": "persuasion / personal relevance proxy",
+      "description": "Potential self-relevance, persuasion, and personal-value processing.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "orbitofrontal_vmPFC",
+          "value": 0.0,
+          "weight": 0.3
+        },
+        {
+          "feature": "posterior_cingulate_precuneus",
+          "value": 0.1304,
+          "weight": 0.25
+        },
+        {
+          "feature": "prefrontal_control",
+          "value": 0.3106,
+          "weight": 0.2
+        },
+        {
+          "feature": "temporal_semantic_social",
+          "value": 0.2597,
+          "weight": 0.15
+        },
+        {
+          "feature": "anterior_cingulate",
+          "value": 0.4296,
+          "weight": 0.1
+        }
+      ],
+      "missing_features": [],
+      "missing_critical_features": [],
+      "research_basis": "Neuroforecasting studies often emphasize medial prefrontal/self-related processing for persuasive message response; this index uses vmPFC/OFC and posterior-midline proxies.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    },
+    {
+      "label": "social_sharing_potential",
+      "score": 0.1765,
+      "confidence": "medium",
+      "engagement_type": "social sharing / narrative resonance proxy",
+      "description": "Potential narrative, social cognition, or share-worthiness signal.",
+      "score_source": "research_informed_brain_feature_formula",
+      "score_components": [
+        {
+          "feature": "temporal_semantic_social",
+          "value": 0.2597,
+          "weight": 0.35
+        },
+        {
+          "feature": "posterior_cingulate_precuneus",
+          "value": 0.1304,
+          "weight": 0.25
+        },
+        {
+          "feature": "orbitofrontal_vmPFC",
+          "value": 0.0,
+          "weight": 0.2
+        },
+        {
+          "feature": "insula_salience",
+          "value": 0.2197,
+          "weight": 0.1
+        },
+        {
+          "feature": "prefrontal_control",
+          "value": 0.3106,
+          "weight": 0.1
+        }
+      ],
+      "missing_features": [],
+      "missing_critical_features": [],
+      "research_basis": "Video-ad liking work highlights social cognition/social-affective response as useful for aggregate liking; this index uses temporal-social and posterior-midline proxies.",
+      "validation_status": "formula_proxy; validate against real campaign outcomes before using as evidence"
+    }
+  ],
+  "neuromarketing_evidence_used": [
+    {
+      "paper": "Venkatraman et al. (2015), Journal of Marketing Research, DOI 10.1509/jmr.13.0593",
+      "use_in_notebook": "Supports attention/affect/memory/desirability as advertising constructs and notes fMRI, especially ventral striatum, can add predictive signal for market response."
+    },
+    {
+      "paper": "Falk, Berkman & Lieberman (2012), Psychological Science, DOI 10.1177/0956797611434964",
+      "use_in_notebook": "Supports medial prefrontal/self-relevance systems as population-response predictors in persuasive media."
+    },
+    {
+      "paper": "Chan et al. (2024), Journal of Marketing Research, DOI 10.1177/00222437231194319",
+      "use_in_notebook": "Supports reporting psychological-process domains: information processing, attention/executive function/memory, and social-affective response."
+    },
+    {
+      "paper": "Guixeres et al. (2017), Frontiers in Psychology, DOI 10.3389/fpsyg.2017.01808",
+      "use_in_notebook": "Supports combining neuroscience-based metrics with machine learning to predict recall, liking, and online viewing outcomes."
+    }
+  ],
+  "brain_activation_image_url": "https://muck-suction-matchbook.ngrok-free.dev/results/brain_activation_e2649087e968.png",
+  "neuromarketing_chart_url": "https://muck-suction-matchbook.ngrok-free.dev/results/neuromarketing_engagement_e2649087e968.png",
+  "limitations": [
+    "These are formula-based proxy indices, not a guaranteed campaign KPI predictor.",
+    "TRIBE output is predicted neural activity, not observed human fMRI from your audience.",
+    "Subcortical reward/affect regions may be absent from TRIBE cortical output; related indices become lower-confidence proxies.",
+    "For claims about sales, recall, liking, shares, or purchase intent, validate against real campaign outcomes or human studies.",
+    "The uploaded ad is only used as a stimulus for TRIBE; no separate image emotion classifier is used.",
+    "TRIBE v2 predictions usually live on a cortical surface; subcortical areas are unavailable unless explicitly returned.",
+    "When possible, cortical vertex outputs are converted to broad ROI proxies with Nilearn's Destrieux surface atlas; otherwise an unlabeled low-confidence surface-profile fallback is used.",
+    "Static images are downscaled, converted to a one-second silent video, and passed to TRIBE through video_path."
+  ],
+  "cleanup": {
+    "uploaded_image_deleted": true,
+    "temporary_video_deleted": true,
+    "intermediate_files_deleted": true,
+    "cleanup_all_requested": true,
+    "retained_files": [
+      "/kaggle/working/results/brain_activation_e2649087e968.png",
+      "/kaggle/working/results/neuromarketing_engagement_e2649087e968.png"
+    ]
+  },
+  "memory_after_analysis": {
+    "cpu_ram": {
+      "available_mb": 28648.8,
+      "used_mb": 2983.8,
+      "percent": 10.8
+    },
+    "cuda_available": true,
+    "cuda": {
+      "allocated_mb": 684.1,
+      "reserved_mb": 702.0,
+      "max_allocated_mb": 10486.6,
+      "device": "Tesla T4"
+    }
+  }
+}

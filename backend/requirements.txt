@@ -1,0 +1,39 @@
+# MomentBrand AI — Backend Dependencies
+# Tested with Python 3.14 on macOS 14 (Apple Silicon).
+# pyppeteer is installed separately in Phase 1 to avoid resolution depth issues.
+
+# ── Web framework ─────────────────────────────────────────────
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# ── Settings / env ────────────────────────────────────────────
+pydantic>=2.9.0
+pydantic-settings>=2.5.0
+python-dotenv>=1.0.0
+
+# ── HTTP ──────────────────────────────────────────────────────
+httpx>=0.26.0
+aiofiles>=24.1.0
+
+# ── File upload ───────────────────────────────────────────────
+python-multipart>=0.0.12
+
+# ── PDF parsing ───────────────────────────────────────────────
+pdfplumber>=0.11.0
+
+# ── Color extraction ──────────────────────────────────────────
+colorthief>=0.2.1
+Pillow>=10.0.0
+
+# ── PostgreSQL ────────────────────────────────────────────────
+psycopg[binary]>=3.2.0
+psycopg-pool>=3.2.0
+
+# ── Browser automation (rendering) ───────────────────────────
+# Keep this aligned with Dockerfile.backend's Playwright base image.
+playwright==1.52.0
+
+# ── Google AI (Gemini) ────────────────────────────────────────
+google-genai>=1.0.0
+
+# NOTE: after pip install, run:  python -m playwright install chromium
