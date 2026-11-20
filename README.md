@@ -2,7 +2,7 @@
 
 > **AI BuildFest 2026 — Track 2: MarTech**
 
-AI-powered brand intelligence, creative direction, and neuromarketing platform. Set your brand identity, plan event-driven campaigns, generate pixel-perfect creative variants (A–E) in Bangla & English across social media formats, and evaluate them using predicted brain responses (TRIBE v2) — all in under 60 seconds.
+AI-assisted brand intelligence, creative direction, and exploratory creative-analysis platform. Set a brand identity, plan event-driven campaigns, generate creative variants (A–E) in Bangla and English across social media formats, and inspect model-estimated response patterns using TRIBE v2.
 
 ---
 
@@ -12,7 +12,7 @@ AI-powered brand intelligence, creative direction, and neuromarketing platform. 
 2. **Event Acceptance**: Import national/seasonal holidays from the [Calendarific API](https://calendarific.com/) and accept recommended marketing opportunities.
 3. **Ad Concept & Layout**: Generate up to 5 creative ad variants (A–E) with Gemini, defining emotional angles, headlines, CTAs, visual directions, and IP compliance risk. Configure formats (1:1, 9:16, 16:9) and layout choices.
 4. **Studio & Composition**: Backgrounds are generated using *Cloudflare Flux* (excluding text). Logos, transparent product cutouts, and multilingual Bangla/English copy are rendered on-brand as HTML/CSS using *Playwright* to ensure pixel-perfect typography.
-5. **Neuromarketing Analysis (TRIBE v2)**: Standalone or bulk-analyze generated ad variants using Facebook's TRIBE v2 fMRI predicted brain-response model. It scores creative stopping power across 9 research-backed neuromarketing indices and visualizes brain activation maps.
+5. **Neuromarketing Analysis (TRIBE v2)**: Standalone or bulk-analyze generated ad variants using TRIBE v2 fMRI-based predicted brain-response model. It produces model-estimated response scores across 9 exploratory indices and visualizes predicted brain activation patterns.
 
 ---
 
@@ -52,7 +52,7 @@ Holiday/Event Opportunities ─────► Campaign Concept Planning (Gemini
                           (Overall Ad Engagement Score)
 ```
 
-**Key Compositing Principle**: The image model (Flux) generates *only* the background. All brand marks, product images, CTAs, and headlines are rendered on top as HTML/CSS by Playwright. This ensures that typography is never warped, branding is pixel-perfect, and bilingual Bangla and English text remains completely crisp and legible.
+**Key Compositing Principle**: The image model (Flux) generates *only* the background. Brand marks, product images, CTAs, and headlines are then placed by an HTML/CSS compositor rendered with Playwright. Separating background generation from text and brand rendering gives the application direct control over layout and makes Bangla and English copy more predictable than asking an image model to render the final poster.
 
 ---
 
@@ -73,7 +73,7 @@ Holiday/Event Opportunities ─────► Campaign Concept Planning (Gemini
 
 ---
 
-## The Neuromarketing API (`brain_response.ipynb`)
+## The TRIBE v2 Analysis API (`brain_response.ipynb`)
 
 Exposes a FastAPI endpoint `/analyze-ad` running on Kaggle/Colab via an ngrok tunnel. Standalone images or bulk campaign variants are proxied by the backend through `POST /api/brain/analyze`.
 
@@ -96,7 +96,7 @@ Exposes a FastAPI endpoint `/analyze-ad` running on Kaggle/Colab via an ngrok tu
 
 ---
 
-## Setup & Run
+## Interpreting TRIBE v2 outputs\n\nTRIBE v2 outputs in this project are **model predictions**, not measurements from people who saw the generated ads. The nine indices and the combined score are application-level summaries derived from predicted activations; they should be treated as exploratory signals for comparing variants, not validated measures of attention, purchase intent, brand recall, or campaign effectiveness. They do not replace user studies, controlled experiments, or real campaign A/B tests.\n\nThe pipeline also depends on a separately hosted Kaggle/Colab runtime and an ngrok tunnel. Its availability and latency depend on that external session, GPU resources, and model initialization.\n\n---\n\n## Setup & Run
 
 ### 1. Database Setup
 Create a PostgreSQL database and run the migration script:
